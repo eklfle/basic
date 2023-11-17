@@ -2,6 +2,13 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
 }
 
+a {
+    text-decoration-line: none;
+    color: #745f5f;
+    font-weight: 700;
+}
+
+
 
 .top_menu {
     position: fixed;
@@ -15,18 +22,14 @@
 
 
 .no_login_user{
-    
     position: absolute;
     bottom: 100px;
     right: 230px;
-
 }
 
 .no_login_user span{
-
     padding: 5px;
     margin-bottom: 10px;
-
 }
 
 
@@ -58,7 +61,6 @@
 .category{
     position: absolute;
     left: 30px; bottom: 15px;
-    
     text-align: center;
 }
 
@@ -199,9 +201,4 @@
     color: black;
 }
 
-a {
-    text-decoration-line: none;
-    color: #745f5f;
-    font-weight: 700;
-}
 

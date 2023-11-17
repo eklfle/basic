@@ -11,15 +11,15 @@
       <!--상단 메뉴 로그인, 로그아웃, 검색, 장바구니, 카테고리 목록들 -->
       {% if user_id == '' %}
       <!--로그인하지 않은 사용자-->
-      <span class="no_login_user">
-        <span><a href="/login/">login</a></span>
+      <div class="no_login_user">
+        <span><a href="{% url 'login' %}">login</a></span>
         <span><a href="/join/">join</a></span>
         <form action="search/" method="get"><input type="text" class="search_txt_box" name="search_txt_box"> <button type="submit">검색</button> </form>
-      </span>
+      </div>
       {% else %}
       <!--로그인한 사용자-->
       <div class="login_user">{{user_id}}님 안녕하세요~~
-        <span><a href="logout/">logout</a></span>
+        <span><a href="{% url 'logout' %}">logout</a></span>
         <span><a href="mypage/">my page</a></span>
         <span><a href="cart/">cart</a></span>
         <form action="search/" method="get"><input type="text" class="search_txt_box" name="search_txt_box"> <button type="submit">검색</button> </form>
@@ -95,7 +95,6 @@
           </div>
         {% endfor %}
     </div>
-
 
  <script src = "{% static 'main/js/main.js' %}"></script>
 

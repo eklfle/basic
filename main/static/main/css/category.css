@@ -1,0 +1,107 @@
+* {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
+
+a {
+    text-decoration-line: none;
+    color: #745f5f;
+    font-weight: 700;
+}
+
+
+.top_menu_bar {
+    position: fixed;
+    top: 0;
+    height: 300px;
+    width: 100%;
+    border-bottom: 5px solid #c0bdbd;
+    z-index: 1;
+    background-color: antiquewhite;
+
+}
+
+.login_menu_wrap {
+    position: absolute;
+    top: 80px;
+    right: 70px;
+    background-color: antiquewhite;
+}
+
+.category_wrap{
+    background-color: antiquewhite;
+    position: absolute;
+    bottom: 0px;
+    text-align: center;
+    width: 100%;
+    height: 65px;
+}
+
+.category ul li {
+    float: left;
+    font-size: 25px;
+    padding-right: 50px;
+    margin-right: 50px;
+    border-right: 5px dotted #c0bdbd;
+}
+
+.category ul :hover {
+    color: #a49797;
+}
+
+.category ul :active {
+    color: black;
+}
+
+
+.item_list_wrap {
+    position: absolute;
+    left: 7%;
+    width: 85%;
+    top: 310px;
+
+}
+
+.item_box{
+    position: relative;
+    border: 3px dotted #c0bdbd;
+    width: 270px; height: 380px;
+    border-radius: 30px;
+    margin-top: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 15px;
+    padding: 20px;
+    overflow: hidden;
+    text-align: center;
+    float: left;
+
+}
+
+
+.img_crop{
+    position: absolute;
+    top: 20px; left: 20px;
+    width: 270px; height: 330px;
+    overflow: hidden;
+
+}
+
+.product_img{
+    height: 400px;
+}
+
+
+.product_name{
+    height: 50px;    width: 270px;
+    position: absolute;
+    top: 360px;
+    font-size: 20px;
+}
+
+.product_name :hover{
+    color: #a49797;
+}
+
+.product_name :active{
+    color: black;
+}

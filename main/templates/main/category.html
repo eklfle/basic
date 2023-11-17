@@ -5,10 +5,57 @@
     <title>Title</title>
 </head>
 <body>
-<h1>카테고리 페이지</h1>
+  {% load static %}
+    <link rel = "stylesheet" href = "{% static 'main/css/category.css' %}">
+  <div class="top_menu_bar"> <!--상단 메뉴바 시작, 카테고리들 + 로그인 정보 -->
+      <div class="login_menu_wrap">
+          {% if user_id == '' %}
+          <!--로그인하지 않은 사용자-->
+          <div class="no_login_user">
+            <span><a href="{% url 'login' %}">login</a></span>
+            <span><a href="/join/">join</a></span>
+            <form action="search/" method="get"><input type="text" class="search_txt_box" name="search_txt_box"> <button type="submit">검색</button> </form>
+          </div>
+          {% else %}
+          <!--로그인한 사용자-->
+          <div class="login_user">{{user_id}}님 안녕하세요~~
+            <span><a href="{% url 'logout' %}">logout</a></span>
+            <span><a href="mypage/">my page</a></span>
+            <span><a href="cart/">cart</a></span>
+            <form action="search/" method="get"><input type="text" class="search_txt_box" name="search_txt_box"> <button type="submit">검색</button> </form>
+          </div>
+          {% endif %}
+      </div>
+      <!--카테고리 목록-->
+      <div class="category_wrap">
+      <span class="category">
+        <ul TYPE="none">
+          <li><a href="{% url 'best' %}">BEST</a></li>
+          <li><a href="{% url 'category' 'dress' %}">DRESS</a></li>
+          <li><a href="{% url 'category' 'outer' %}">OUTER</a></li>
+          <li><a href="{% url 'category' 'knit' %}">KNIT</a></li>
+          <li><a href="{% url 'category' 'blouse' %}">BLOUSE</a></li>
+          <li><a href="{% url 'category' 'pants' %}">PANTS</a></li>
+          <li><a href="{% url 'category' 'acc' %}">ACC</a></li>
+        </ul>
+      </span>
+      </div>
+  </div>
 
-{% for item in category_list %}
-<p> {{item}}</p>
-{% endfor %}
+ <div class = "item_list_wrap">
+     {% for item in category_list %}
+     <div class="item_box">
+         <div class="img_crop" href="{% url 'detail' item %}" >
+             <a href="{% url 'detail' item %}">
+               <img src="{% get_static_prefix %}main/img/{{item}}.jpg" class="product_img" >
+             </a>
+         </div>
+         <div class="product_name">
+             <a href="{% url 'detail' item %}">{{item}}</a><br>
+         </div>
+     </div>
+     {% endfor %}
+ </div>
+
 </body>
 </html>

@@ -16,7 +16,6 @@ def main(request):
     if 'user_id' in request.session.keys():
         # return HttpResponse("로그인 성공~~~ 메인페이지")
         print(request.session.keys())
-        print(request.session.get('user_id'))
         user_id = request.session.get('user_id')
         context = {"user_id" : user_id, 'inventory_item_list' : itemlist}
         return render(request, "main/main.html", context)
@@ -38,7 +37,12 @@ def category(request, category):
         else:
             itemlist.append(item.product_name)
 
-    context = {"category_list" : itemlist}
+    if 'user_id' in request.session.keys():
+        user_id = request.session.get('user_id')
+        context = {"category_list" : itemlist, "user_id" : user_id}
+    else:
+        context = {"category_list" : itemlist, "user_id" : ""}
+
     return render(request, "main/category.html", context)
 
 def mypage(request):
