@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+  {% load static %}
+  <link rel = "stylesheet" href = "{% static 'main/css/detail.css' %}">
+    상세페이지<br>
+    <div class="detail_view">
+        <input type="hidden" id="price_for_js" name="variable" value="{{ product_info.0.price }}">
+        <input type="hidden" id="name_for_js" name="variable" value="{{ product_info.0.product_name }}">
+        <div class="detail_view2">
+            <div class="img_crop">
+                <img src ="{% get_static_prefix %}main/img/{{product_info.0.product_name}}.jpg" class="product_img">
+            </div>
+            <div class = "product_txt">
+                <div class ="product_name_price">
+                    제품명 : {{product_info.0.product_name}}<br><br>
+                    판매가 : {{product_info.0.price}}
+                </div>
+                <div class="order">
+                    <h3>구매하기</h3>
+                        색상 :
+                    <select id = "selected_color" >
+                        <option value="none" disabled selected>=====</option>
+                        {% for item in product_info %}
+                        <option value="{{item.color}}">{{item.color}}</option>
+                        {% endfor %}
+                    </select><br>
+                    <button type="submit" value="cart" formaction="{% url 'cart' %}" formmethod="post" id="add_to_cart">장바구니에 담기</button>
+                    <button id = "buy">바로 구매</button>
+                </div>
+                <div class = "order_list" id="order_list"></div>
+                <div class = "entire_order", id="entire_order">
+                    <form id="order_form">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+<script src = "{% static 'main/js/detail.js' %}"></script>
+</body>
+</html>

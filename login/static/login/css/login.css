@@ -1,0 +1,99 @@
+html {
+    height: 100%;
+}
+body {
+    min-height: 100%;
+    background-color: antiquewhite;
+    position: relative;
+
+}
+
+* { 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.login_page_1{
+    background-color: aquamarine;
+    width: 400px;
+    height: 600px;
+    margin: 0 auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.login_page_2{
+   
+    background-color: white;
+    position: relative;
+    width: 400px; height: 150px;
+    text-align: center;
+    font-size: 50px;
+    padding: 46px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(132, 114, 90);
+    border: 5px solid;
+
+}
+
+input[type="text"] {
+    writing-mode: horizontal-tb !important;
+    padding-block: 1px;
+    padding-inline: 2px;
+    height: 100px;
+    width: 370px;
+    margin: 13px;
+    border-bottom: 3px;
+    font-size: 20px;
+    
+}
+
+input[type="password"] {
+    writing-mode: horizontal-tb !important;
+    padding-block: 1px;
+    padding-inline: 2px;
+    height: 100px;
+    width: 370px;
+    margin: 13px;
+    border-bottom: 3px;
+    font-size: 20px;
+    
+}
+
+.login_page_3 {
+    background-color: rgb(189, 174, 155);
+    width: 400px;
+    height: 300px;
+}
+
+.login_page_4 {
+
+    width: 400px;
+    height: 150px;
+    background-color: rgb(234, 215, 189);
+    border: 5px solid;
+    border-color: rgb(146, 133, 114);
+    margin: 0 auto;
+    font-size: 50px;
+    color: white;
+    text-align: center;
+    padding: 27px;
+    
+}
+
+.login_page_4 :hover{
+    color: rgb(94, 79, 56);
+}
+
+
+
+
+
+
+
+
+
