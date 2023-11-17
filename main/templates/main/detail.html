@@ -63,18 +63,16 @@
                         {% endfor %}
                     </select><br>
                         <div class="btn_wrap">
-
                             <button type="submit" value="cart" form="order_form" formaction="{% url 'cart' 'order_list' %}" formmethod="post" id="add_to_cart_btn">장바구니</button>
                              <button type="submit" value="buy" formaction="buy" formmethod="post" id="buy_btn">바로구매</button>
                         </div>
                 </div>
                 <div class = "order_list" id="order_list"></div>
-                <div class = "entire_order", id="entire_order">
+                <div class = "entire_order_wrap", id="entire_order_wrap">
                     <form id="order_form">
                         {% csrf_token %}
                         <input type="hidden" value="gmg   mgm" name="entire_order_list">
                     </form>
-
                 </div>
 
         </div>
