@@ -1,92 +1,156 @@
+* {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
+
+
+a {
+    text-decoration-line: none;
+    color: #745f5f;
+    font-weight: 700;
+}
+
+.top_menu_bar {
+    position: fixed;
+    top: 0;
+    height: 120px;
+    width: 100%;
+    border-bottom: 5px solid #c0bdbd;
+    z-index: 1;
+    background-color: antiquewhite;
+
+}
+
+.login_menu_wrap {
+    position: absolute;
+    top: 20px;
+    right: 150px;
+    background-color: antiquewhite;
+}
+
+.category_wrap{
+    background-color: antiquewhite;
+    position: absolute;
+    bottom: 0px;
+    text-align: center;
+    width: 100%;
+    height: 65px;
+}
+
+.category ul li {
+    float: left;
+    font-size: 25px;
+    padding-right: 50px;
+    margin-right: 50px;
+    border-right: 5px dotted #c0bdbd;
+}
+
+.category ul :hover {
+    color: #a49797;
+}
+
+.category ul :active {
+    color: black;
+}
+
 .detail_view{
-    background-color: aqua;
-    position: relative;
+    position: absolute;
+    top: 160px;
+    left: 25%;
+    width: 50%;
+    height: 800px;
 
 
 }
 
-.detail_view2{
-    background-color: blue;
+.img_crop {
     position: absolute;
-    width: 1000px;
-}
 
-.img_crop{
-    position: absolute;
-    top: 50px;
-    background-color: blueviolet;
-    width: 450px; height: 700px;
+    height: 100%;
+    width: 50%;
     overflow: hidden;
-
-
-    #product_img{
-        position: absolute;
-        top: 0; left: 0;
-        
-    }
-
 }
 
-.product_txt{
+.product_txt {
     position: absolute;
-    top: 50px; left: 470px;
-
-}
-
-.product_name_price{
-    position: relative;
-    left: 0px; top: 5px;
-    width: 400px;
+    top: 1%;
+    right: 0;
+    width: 44%;
+    height: 98%;
+    border: 3px solid #c0bdbd;
     border-radius: 30px;
-    border: 5px solid #000000;
-    margin: 10px 10px 10px 10px;
-    padding: 20px;
+    padding: 2%;
+    font-size: 90%;
+    color: #745f5f;
 
 }
 
-.order{
+.product_name_price {
     position: relative;
-    top: 10px;
-    width: 400px;
-    border: 5px solid #000000;
-    border-radius: 30px;
-    margin: 10px 10px 10px 10px;
-    padding: 20px;   
+    width: 93%;
+    padding: 3%;
+    border: 2px dotted #c0bdbd;
+    border-radius: 20px;
+
 }
 
-#add_to_cart{
+.order {
+    position: relative;
+    margin-top: 2%;
+    width: 93%;
+    padding: 3%;
+    border: 2px dotted #c0bdbd;
+    border-radius: 20px;
+}
+
+.btn_wrap{
+
     position: absolute;
-    top: 12px; left: 170px;
-    width: 100px; height: 100px;
-    border-radius: 10px;
+    top: 10%; right: 5%;
+    width: 50%;
+    height: 80%;
 }
 
-#buy{
+.btn_wrap button{
+
+    background-color: antiquewhite;
+    border: 2px dotted #828080;
+    border-radius: 5px;
+
+
+}
+
+#add_to_cart_btn{
+    width: 47%;
+    height: 100%;
     position: absolute;
-    top: 12px; left: 290px;
-    width: 100px; height: 100px;
-    border-radius: 10px;
+
+}
+
+#buy_btn{
+    width: 47%;
+    position: absolute;
+    right: 0;
+    height: 100%;
+
+}
+
+div[class*=add_order]{
+
+    width: 93%;
+    border: 2px dotted #c0bdbd;
+    margin-top: 2%;
+    font-weight: 600;
+    padding: 3%;
+    border-radius: 12px;
+
 }
 
 
-#order_list{
-    position: relative;
-    top: 15px;
-    width: 400px;
-}
+div[class*=add_order] .order_amount{
 
-.add_order{
-    width: 400px;
-    position: relative;
-    border: 5px solid #000000;
-    border-radius: 30px;
-    margin: 5px 5px 5px 5px;
-    padding: 20px;   
-}
+    width: 10%; 
+    position: absolute;
+    left: 50%;
 
-.entire_order{
-    position: relative;
-    top: 15px;
-    width: 400px;
 
 }

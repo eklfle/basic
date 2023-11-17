@@ -53,13 +53,22 @@ def mypage(request):
     else:
         return HttpResponse("로그인 하지 않은 유저입니다.")
 
-def cart(request):
+def cart(request, order_list):
     user_id = request.session.get('user_id')
+
+    print("orderlist : ", order_list)
+    print(list(request.POST.items()))
+
+    order_list = request.POST['entire_order_list']
+    print(order_list)
+
     if request.method == 'POST':
         print(request.POST)
-        for items in request.POST:
-            print(items)
-    return  HttpResponse("장바구니 페이지")
+        for key, value in request.POST.items():
+            print("키 : ", key)
+            print("값 : ", value)
+
+    return HttpResponse("장바구니 페이지")
 
 def detail(request, product_name):
     product_info = Inventory.objects.filter(product_name = product_name)

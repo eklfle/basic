@@ -7,18 +7,51 @@
 <body>
   {% load static %}
   <link rel = "stylesheet" href = "{% static 'main/css/detail.css' %}">
-    상세페이지<br>
+    <div class="top_menu_bar"> <!--상단 메뉴바 시작, 카테고리들 + 로그인 정보 -->
+      <div class="login_menu_wrap">
+          {% if user_id == '' %}
+          <!--로그인하지 않은 사용자-->
+          <div class="no_login_user">
+            <span><a href="{% url 'login' %}">login</a></span>
+            <span><a href="/join/">join</a></span>
+            <form action="search/" method="get"><input type="text" class="search_txt_box" name="search_txt_box"> <button type="submit">검색</button> </form>
+          </div>
+          {% else %}
+          <!--로그인한 사용자-->
+          <div class="login_user">{{user_id}}님 안녕하세요~~
+            <span><a href="{% url 'logout' %}">logout</a></span>
+            <span><a href="mypage/">my page</a></span>
+            <span><a href="cart/">cart</a></span>
+            <form action="search/" method="get"><input type="text" class="search_txt_box" name="search_txt_box"> <button type="submit">검색</button> </form>
+          </div>
+          {% endif %}
+      </div>
+      <!--카테고리 목록-->
+      <div class="category_wrap">
+      <span class="category">
+        <ul TYPE="none">
+          <li><a href="{% url 'best' %}">BEST</a></li>
+          <li><a href="{% url 'category' 'dress' %}">DRESS</a></li>
+          <li><a href="{% url 'category' 'outer' %}">OUTER</a></li>
+          <li><a href="{% url 'category' 'knit' %}">KNIT</a></li>
+          <li><a href="{% url 'category' 'blouse' %}">BLOUSE</a></li>
+          <li><a href="{% url 'category' 'pants' %}">PANTS</a></li>
+          <li><a href="{% url 'category' 'acc' %}">ACC</a></li>
+        </ul>
+      </span>
+      </div>
+  </div>
+
     <div class="detail_view">
         <input type="hidden" id="price_for_js" name="variable" value="{{ product_info.0.price }}">
         <input type="hidden" id="name_for_js" name="variable" value="{{ product_info.0.product_name }}">
-        <div class="detail_view2">
             <div class="img_crop">
                 <img src ="{% get_static_prefix %}main/img/{{product_info.0.product_name}}.jpg" class="product_img">
             </div>
             <div class = "product_txt">
                 <div class ="product_name_price">
-                    제품명 : {{product_info.0.product_name}}<br><br>
-                    판매가 : {{product_info.0.price}}
+                    이름  <strong>{{product_info.0.product_name}} </strong><br><br>
+                    가격  <strong>{{product_info.0.price}} </strong>
                 </div>
                 <div class="order">
                     <h3>구매하기</h3>
@@ -29,15 +62,21 @@
                         <option value="{{item.color}}">{{item.color}}</option>
                         {% endfor %}
                     </select><br>
-                    <button type="submit" value="cart" formaction="{% url 'cart' %}" formmethod="post" id="add_to_cart">장바구니에 담기</button>
-                    <button id = "buy">바로 구매</button>
+                        <div class="btn_wrap">
+
+                            <button type="submit" value="cart" form="order_form" formaction="{% url 'cart' 'order_list' %}" formmethod="post" id="add_to_cart_btn">장바구니</button>
+                             <button type="submit" value="buy" formaction="buy" formmethod="post" id="buy_btn">바로구매</button>
+                        </div>
                 </div>
                 <div class = "order_list" id="order_list"></div>
                 <div class = "entire_order", id="entire_order">
                     <form id="order_form">
+                        {% csrf_token %}
+                        <input type="hidden" value="gmg   mgm" name="entire_order_list">
                     </form>
+
                 </div>
-            </div>
+
         </div>
     </div>
 <script src = "{% static 'main/js/detail.js' %}"></script>

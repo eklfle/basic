@@ -7,7 +7,7 @@ urlpatterns = [
     path("<str:product_name>/detail", views.detail, name="detail"),
     path("category/<str:category>", views.category, name="category"),
     path("mypage/", views.mypage, name="mypage"),
-    path("cart/", views.cart, name="cart"),
+    path("cart/<str:order_list>", views.cart, name="cart"),
     path("best/", views.best, name="best"),
     path("search/", views.search, name="search"),
 
